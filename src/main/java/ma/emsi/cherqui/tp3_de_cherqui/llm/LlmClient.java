@@ -56,12 +56,12 @@ public class LlmClient implements Serializable {
      * @param question la question posée par l'utilisateur
      * @return la réponse du LLM
      */
-    public GuideResponse poserQuestion(String question) {
+    public GuideResponse poserQuestion(String question,String nbr_endroits) {
         if (question == null || question.isBlank()) {
             throw new IllegalArgumentException("La question ne peut pas être vide");
         }
         // LangChain4j gère automatiquement l'historique via chatMemory
-        return guideTouristique.ask(question);
+        return guideTouristique.ask(question,nbr_endroits);
     }
 
     /**
