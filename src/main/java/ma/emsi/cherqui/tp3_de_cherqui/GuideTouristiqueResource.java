@@ -5,13 +5,23 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
-@Path("/lieu/{ville_pays}")
+import java.util.ArrayList;
+import java.util.List;
+
+@Path("/guide")
 public class GuideTouristiqueResource {
 
     @GET
-    @Produces("text/plain")
-    public String hello(@PathParam("ville_pays") String ville_pays) {
-        return "ville/pays choisi :  " + ville_pays;
+    @Path("/lieu/{ville_pays}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> hello(@PathParam("ville_pays") String lieu) {
+        List<String> lieux = new ArrayList<>();
+
+        lieux.add("Lieu touristique 1 pour " + lieu);
+        lieux.add("Lieu touristique 2 pour " + lieu);
+
+        return lieux;
     }
 }
