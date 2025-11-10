@@ -8,6 +8,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import ma.emsi.cherqui.tp3_de_cherqui.llm.LlmClient;
+import ma.emsi.cherqui.tp3_de_cherqui.model.GuideResponse;
 
 @Path("/guide")
 public class GuideTouristiqueResource {
@@ -18,7 +19,7 @@ public class GuideTouristiqueResource {
     @GET
     @Path("/lieu/{ville_pays}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String askGuide(@PathParam("ville_pays") String lieu) {
+    public GuideResponse askGuide(@PathParam("ville_pays") String lieu) {
         return llmClient.poserQuestion(lieu);
     }
 }

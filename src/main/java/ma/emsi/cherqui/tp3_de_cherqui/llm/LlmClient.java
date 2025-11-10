@@ -7,6 +7,7 @@ import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel;
 import dev.langchain4j.service.AiServices;
 import jakarta.enterprise.context.Dependent;
+import ma.emsi.cherqui.tp3_de_cherqui.model.GuideResponse;
 
 import java.io.Serializable;
 import java.time.Duration;
@@ -55,7 +56,7 @@ public class LlmClient implements Serializable {
      * @param question la question posée par l'utilisateur
      * @return la réponse du LLM
      */
-    public String poserQuestion(String question) {
+    public GuideResponse poserQuestion(String question) {
         if (question == null || question.isBlank()) {
             throw new IllegalArgumentException("La question ne peut pas être vide");
         }
