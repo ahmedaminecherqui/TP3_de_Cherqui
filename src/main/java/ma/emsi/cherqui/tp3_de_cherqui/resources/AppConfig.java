@@ -1,4 +1,4 @@
-package ma.emsi.cherqui.tp3_de_cherqui;
+package ma.emsi.cherqui.tp3_de_cherqui.resources;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
